@@ -1,0 +1,9 @@
+<div *ngFor="let repo of repositories">
+    <div class="card" style="width: 100%; margin-top: 10px">
+    <div class="card-body">
+    <h5 class="card-title">{{repo.name}}</h5>
+    <p class="card-text">{{repo.description}}</p>
+    <a href="{{repo.url}}" target="_blank" class="card-link">Go to repo ...</a>
+</div>
+</div>
+</div>
