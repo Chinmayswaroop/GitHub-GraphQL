@@ -1,9 +1,10 @@
 <div *ngFor="let repo of repositories">
     <div class="card" style="width: 100%; margin-top: 10px">
+    <h5 class="card-header">{{repo.node.name | uppercase}}</h5>
     <div class="card-body">
-    <h5 class="card-title">{{repo.name}}</h5>
-    <p class="card-text">{{repo.description}}</p>
-    <a href="{{repo.url}}" target="_blank" class="card-link">Go to repo ...</a>
+    <p class="card-text"> <b>Description:</b> {{repo.node.description}}</p>
+    <a href="{{repo.node.url}}" target="_blank" class="card-link">Visit Repository</a>
+    <button class="btn btn-primary btn-sm " style="float:right;" (click)="buttonClick(repo.node.name)" >More Details</button>
 </div>
 </div>
 </div>
