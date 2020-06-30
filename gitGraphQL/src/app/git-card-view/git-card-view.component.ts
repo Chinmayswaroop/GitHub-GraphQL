@@ -17,6 +17,7 @@ export class GitCardViewComponent implements OnInit {
   result: any;
   client : any;
   totalRepoOnGit : any;
+  throbber : boolean=true;
   constructor(private router: Router) {
     
    }
@@ -61,6 +62,7 @@ export class GitCardViewComponent implements OnInit {
           // console.log(this.result);
           this.repositories = this.result;
           console.log(this.repositories);
+          this.throbber = false;
       });
   }
 
