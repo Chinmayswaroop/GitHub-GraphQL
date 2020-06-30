@@ -5,7 +5,6 @@ import 'cross-fetch/polyfill';
 import ApolloClient, { gql } from 'apollo-boost';
 import { execute } from 'graphql';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-git-card-view',
   templateUrl: './git-card-view.component.html',
@@ -30,7 +29,7 @@ export class GitCardViewComponent implements OnInit {
       operation.setContext({
       headers: {
         /* keep this in .env file hidden in the prod/git also */
-        authorization: `Bearer a4cd3ccb7bd7e3652f4d7973239b791fd7700384`,
+        authorization: `Bearer ADD_YOUR_TOKEN_HERE`,
           },
         });
       },
@@ -40,28 +39,13 @@ export class GitCardViewComponent implements OnInit {
   }
 
   executeQuery(){
-    // this.client.query({
-    //   query: CHECK,
-    //   variables: {
-    //   "number_of_repos": 10
-    //   }
-    //   }).then((val: any) => {
-    //       this.result = val.data.viewer;
-    //       console.log(this.result);
-    //       this.repositories = this.result.repositories.nodes;
-    //       console.log(this.repositories);
-    //   });
 
     this.client.query({
       query: GETPUBLICREPOS
       }).then((val: any) => {
-          console.log("VAL::",val);
           this.result = val.data.search.edges;
           this.totalRepoOnGit = val.data.search.repositoryCount;
-          // console.log("CHECK:::"+this.totalRepoOnGit);
-          // console.log(this.result);
           this.repositories = this.result;
-          console.log(this.repositories);
           this.throbber = false;
       });
   }
