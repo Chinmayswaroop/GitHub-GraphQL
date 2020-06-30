@@ -14,6 +14,11 @@ ng serve
 ```
 This will start the server at port 4200
 
+<p align="center">
+  <img src="repoImage.png" alt="Size Limit CLI" width="738">
+</p>
+
+
 
 # Prerequisite
 You will need a Authentication token for making request and getting data from GitHub's. 
